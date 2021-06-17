@@ -12,4 +12,4 @@ const ContactSchema = new Schema
 });
 
 const Model = mongoose.model("Contact", ContactSchema);
-export default Model;
+export default Model; 
