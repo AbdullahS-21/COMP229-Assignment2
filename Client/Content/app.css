@@ -57,3 +57,22 @@
     top: -31px;
     display: none;
 }
+
+
+
+
+.homeBtn
+{
+   position: absolute;
+   left: 85%;
+   top: 75%;
+
+
+}
+
+.serviceBG
+{
+    background: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.6)),url(/Assets/images/ServicesColorful.jpg);
+  background-size: cover;
+  background-position: center;
+}
