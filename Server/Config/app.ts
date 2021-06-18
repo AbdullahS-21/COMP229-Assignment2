@@ -22,7 +22,7 @@ import flash from 'connect-flash';
 
 // attach router files
 import indexRouter from '../Routes/index';
-import clothingRouter from '../Routes/clothing';
+import contactsRouter from '../Routes/contacts';
 
 // Express Web App Configuration
 const app = express();
@@ -80,7 +80,7 @@ passport.deserializeUser(User.deserializeUser());
 
 // create routing through event handling
 app.use('/', indexRouter);
-app.use('/clothing-list', clothingRouter);
+app.use('/contacts-list', contactsRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) 

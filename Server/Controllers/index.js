@@ -31,7 +31,7 @@ function DisplayLoginPage(req, res, next) {
     if (!req.user) {
         return res.render('index', { title: 'Login', page: 'login', messages: req.flash('loginMessage'), displayName: Util_1.UserDisplayName(req) });
     }
-    return res.redirect('/clothing-list');
+    return res.redirect('/contacts-list');
 }
 exports.DisplayLoginPage = DisplayLoginPage;
 function ProcessLoginPage(req, res, next) {
@@ -49,7 +49,7 @@ function ProcessLoginPage(req, res, next) {
                 console.error(err);
                 return next(err);
             }
-            return res.redirect('/clothing-list');
+            return res.redirect('/contacts-list');
         });
     })(req, res, next);
 }
@@ -58,7 +58,7 @@ function DisplayRegisterPage(req, res, next) {
     if (!req.user) {
         return res.render('index', { title: 'Register', page: 'register', messages: req.flash('registerMessage'), displayName: Util_1.UserDisplayName(req) });
     }
-    return res.redirect('/clothing-list');
+    return res.redirect('/contacts-list');
 }
 exports.DisplayRegisterPage = DisplayRegisterPage;
 function ProcessRegisterPage(req, res, next) {
@@ -77,7 +77,7 @@ function ProcessRegisterPage(req, res, next) {
             return res.redirect('/register');
         }
         return passport_1.default.authenticate('local')(req, res, () => {
-            return res.redirect('/clothing-list');
+            return res.redirect('/contacts-list');
         });
     });
 }

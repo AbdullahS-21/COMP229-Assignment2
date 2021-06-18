@@ -35,12 +35,9 @@ function ProcessEditPage(req, res, next) {
     let id = req.params.id;
     let updatedContactsItem = new contacts_1.default({
         "_id": id,
-        "name": req.body.name,
-        "brand": req.body.brand,
-        "category": req.body.category,
-        "colour": req.body.colour,
-        "size": req.body.size,
-        "price": req.body.price
+        "FullName": req.body.FullName,
+        "ContactNumber": req.body.ContactNumber,
+        "EmailAddress": req.body.EmailAddress
     });
     contacts_1.default.updateOne({ _id: id }, updatedContactsItem, {}, (err) => {
         if (err) {
@@ -53,12 +50,9 @@ function ProcessEditPage(req, res, next) {
 exports.ProcessEditPage = ProcessEditPage;
 function ProcessAddPage(req, res, next) {
     let newContacts = new contacts_1.default({
-        "name": req.body.name,
-        "brand": req.body.brand,
-        "category": req.body.category,
-        "colour": req.body.colour,
-        "size": req.body.size,
-        "price": req.body.price
+        "FullName": req.body.FullName,
+        "ContactNumber": req.body.ContactNumber,
+        "EmailAddress": req.body.EmailAddress
     });
     contacts_1.default.create(newContacts, (err) => {
         if (err) {

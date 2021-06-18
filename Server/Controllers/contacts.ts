@@ -65,12 +65,9 @@ export function ProcessEditPage(req: Request, res: Response, next: NextFunction)
     let updatedContactsItem = new Contacts
     ({
       "_id": id,
-      "name": req.body.name,
-      "brand": req.body.brand,
-      "category": req.body.category,
-      "colour": req.body.colour,
-      "size": req.body.size,
-      "price": req.body.price
+      "FullName": req.body.FullName,
+      "ContactNumber": req.body.ContactNumber,
+      "EmailAddress": req.body.EmailAddress
     });
   
     // find the contacts item via db.contacts.update({"_id":id}) and then update
@@ -91,12 +88,9 @@ export function ProcessAddPage(req: Request, res: Response, next: NextFunction):
   // instantiate a new Contacts
   let newContacts = new Contacts
   ({
-    "name": req.body.name,
-    "brand": req.body.brand,
-    "category": req.body.category,
-    "colour": req.body.colour,
-    "size": req.body.size,
-    "price": req.body.price
+    "FullName": req.body.FullName,
+    "ContactNumber": req.body.ContactNumber,
+    "EmailAddress": req.body.EmailAddress
   });
 
   // db.clothing.insert({clothing data is here...})
